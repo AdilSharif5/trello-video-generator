@@ -2,7 +2,7 @@ name: Generate Video on Trello Changes
 
 on:
   repository_dispatch:
-    types: [trigger-build]
+    types: [trigger_build]
 
 jobs:
   build:
