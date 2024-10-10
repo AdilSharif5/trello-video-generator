@@ -1,0 +1,20 @@
+name: Generate Video on Trello Changes
+
+on:
+  repository_dispatch:
+    types: [trigger-build]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the code
+      uses: actions/checkout@v3
+
+    - name: Run the video generation script
+      run: |
+        echo "Generating video based on Trello changes..."
+        # Add your video generation command using React Remotion here
+        npm install
+        npm run build
