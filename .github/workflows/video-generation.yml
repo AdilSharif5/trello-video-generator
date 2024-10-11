@@ -9,12 +9,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout the code
-      uses: actions/checkout@v3
+      - name: Checkout the code
+        uses: actions/checkout@v3
 
-    - name: Run the video generation script
-      run: |
-        echo "Generating video based on Trello changes..."
-        # Add your video generation command using React Remotion here
-        npm install
-        npm run build
+      - name: Run the video generation script
+        run: |
+          echo "Generating video based on Trello changes..."
+          # Add your video generation command using React Remotion here
+          npm install
+          npm run build
+        env:
+          REACT_APP_TRELLO_KEY: ${{ secrets.TRELLO_API_KEY }}
+          REACT_APP_TRELLO_TOKEN: ${{ secrets.TRELLO_API_TOKEN }}
