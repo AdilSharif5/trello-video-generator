@@ -95,9 +95,10 @@ export const VideoComponent = () => {
           CARDS_TO_TRACK.includes(card.idShort)
         );
         setTickets(filteredCards);
-        continueRender(handle);
       } catch (e) {
         console.error(e);
+      } finally {
+        continueRender(handle);
       }
     };
 
