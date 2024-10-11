@@ -96,7 +96,8 @@ export const VideoComponent = () => {
         );
         setTickets(filteredCards);
       } catch (e) {
-        console.error(e);
+        console.error("Error while fetching data from Trello: ", e);
+        throw e;
       } finally {
         continueRender(handle);
       }
