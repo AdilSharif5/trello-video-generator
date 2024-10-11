@@ -17,6 +17,8 @@ jobs:
           REACT_APP_TRELLO_KEY: ${{ secrets.TRELLO_API_KEY }}
           REACT_APP_TRELLO_TOKEN: ${{ secrets.TRELLO_API_TOKEN }}
         run: |
+          echo "Trello Key: ${{secrets.TRELLO_API_KEY}}"
+          echo Trello Token: $REACT_APP_TRELLO_TOKEN
           echo "Generating video based on Trello changes..."
           # Add your video generation command using React Remotion here
           npm install
