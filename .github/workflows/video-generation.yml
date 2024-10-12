@@ -17,9 +17,23 @@ jobs:
           REACT_APP_TRELLO_KEY: ${{ secrets.TRELLO_API_KEY }}
           REACT_APP_TRELLO_TOKEN: ${{ secrets.TRELLO_API_TOKEN }}
         run: |
-          echo "Trello Key: ${{secrets.TRELLO_API_KEY}}"
-          echo Trello Token: $REACT_APP_TRELLO_TOKEN
           echo "Generating video based on Trello changes..."
           # Add your video generation command using React Remotion here
           npm install
           npm run build
+
+      - name: Set up Git user
+        run: |
+          git config --global user.email "mdadilsharif5@gmail.com"
+          git config --global user.name "AdilSharif5"
+
+      - name: Switch to generated-videos branch
+        run: |
+          git checkout -b generated-videos || git checkout generated-videos
+
+      - name: Add new video file
+        run: |
+          git checkout generated-videos
+          git add .
+          git commit -m "Add new generated video"
+          git push origin generated-videos
