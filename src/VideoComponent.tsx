@@ -35,12 +35,8 @@ import { useState, useEffect, useRef } from "react";
 
 import { AbsoluteFill, continueRender, delayRender, Sequence } from "remotion";
 import { TOTAL_DURATION_IN_FRAMES } from "./Root";
-import { TRELLO_RESPONSE } from "./constant";
 
 // const LIST_ID = "67090a826b8145f3b3b5f716"; // Testing Trello API List ID
-const LIST_ID = "66fa5dcc77e666bd2dc61f67"; // Done List ID
-const TRELLO_KEY = process.env.REACT_APP_TRELLO_KEY;
-const TRELLO_TOKEN = process.env.REACT_APP_TRELLO_TOKEN;
 const CARDS_TO_TRACK = [7, 15, 19, 20];
 
 export const MyVideo = ({
@@ -88,11 +84,19 @@ export const VideoComponent = () => {
     // Fetch Trello data dynamically when building the video
     const fetchTrelloData = async () => {
       try {
-        // const response = await fetch(
-        //   `https://api.trello.com/1/lists/${LIST_ID}/cards?key=${TRELLO_KEY}&token=${TRELLO_TOKEN}`
-        // );
-        // const doneCards = await response.json();
-        const doneCards = TRELLO_RESPONSE;
+        // Till I don't understand how to use GitHub Actions with Secrets, I will just hardcode (secrets? shh for now!)
+        const response = await fetch(
+          "https://trello-video-generator-middleware-adilsharif5s-projects.vercel.app/api/trello-list-data",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+
+        const doneCards = await response.json();
+        // const doneCards = TRELLO_RESPONSE;
         const filteredCards = doneCards.filter((card: Ticket) =>
           CARDS_TO_TRACK.includes(card.idShort)
         );
