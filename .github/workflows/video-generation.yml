@@ -36,6 +36,6 @@ jobs:
           git add out/video.mp4
           git commit -m "Add new generated video"
 
-      - name: Push changes
+      - name: Force push to generated-videos branch
         run: |
-          git push origin generated-videos
+          git push origin generated-videos --force
