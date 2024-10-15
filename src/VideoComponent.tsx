@@ -124,7 +124,11 @@ export const VideoComponent = () => {
           duration.current = time;
           if (index) from.current += time;
           return (
-            <Sequence from={from.current} durationInFrames={duration.current}>
+            <Sequence
+              key={from.current + Math.random()}
+              from={from.current}
+              durationInFrames={duration.current}
+            >
               <MyVideo
                 title={ticket.name}
                 description={ticket.desc}

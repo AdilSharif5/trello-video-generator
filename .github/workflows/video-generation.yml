@@ -12,10 +12,14 @@ jobs:
       - name: Checkout the code
         uses: actions/checkout@v3
 
+      - name: Switch to main branch
+        run: |
+          git checkout main
+          git pull origin main
+
       - name: Run the video generation script
         run: |
           echo "Generating video based on Trello changes..."
-          # Add your video generation command using React Remotion here
           npm install
           npm run build
 
@@ -28,9 +32,15 @@ jobs:
         run: |
           git checkout -b generated-videos || git checkout generated-videos
 
-      - name: Add new video file
+      - name: Pull latest changes
         run: |
-          git checkout generated-videos
-          git add .
+          git pull origin generated-videos --rebase
+
+      - name: Add new generated video
+        run: |
+          git add out/video.mp4
           git commit -m "Add new generated video"
+
+      - name: Push changes
+        run: |
           git push origin generated-videos
