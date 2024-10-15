@@ -12,10 +12,13 @@ jobs:
       - name: Checkout the code
         uses: actions/checkout@v3
 
-      - name: Switch to main branch
+      - name: Switch to generated-videos branch
         run: |
-          git checkout main
-          git pull origin main
+          git checkout -b generated-videos || git checkout generated-videos
+
+      - name: Pull latest changes
+        run: |
+          git pull origin generated-videos --rebase
 
       - name: Run the video generation script
         run: |
@@ -27,14 +30,6 @@ jobs:
         run: |
           git config --global user.email "mdadilsharif5@gmail.com"
           git config --global user.name "AdilSharif5"
-
-      - name: Switch to generated-videos branch
-        run: |
-          git checkout -b generated-videos || git checkout generated-videos
-
-      - name: Pull latest changes
-        run: |
-          git pull origin generated-videos --rebase
 
       - name: Add new generated video
         run: |
