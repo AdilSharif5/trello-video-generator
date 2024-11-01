@@ -11,9 +11,10 @@
 
 Welcome to your Remotion project!
 
-[![Watch the video](out/thumbnail.png)](https://raw.githubusercontent.com/AdilSharif5/trello-video-generator/generated-videos/out/video.mp4)
-
-https://raw.githubusercontent.com/AdilSharif5/trello-video-generator/generated-videos/out/video.mp4
+<video width="400" controls>
+  <source src="https://raw.githubusercontent.com/AdilSharif5/trello-video-generator/generated-videos/out/video.mp4" type="video/mp4">
+  Your browser does not support HTML video.
+</video>
 
 ## Commands
 
