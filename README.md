@@ -11,7 +11,9 @@
 
 Welcome to your Remotion project!
 
-[![Watch the video]](https://raw.githubusercontent.com/AdilSharif5/trello-video-generator/generated-videos/out/video.mp4)
+[![Watch the video](out/thumbnail.png)](https://raw.githubusercontent.com/AdilSharif5/trello-video-generator/generated-videos/out/video.mp4)
+
+https://raw.githubusercontent.com/AdilSharif5/trello-video-generator/generated-videos/out/video.mp4
 
 ## Commands
 
