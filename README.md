@@ -16,6 +16,12 @@ Welcome to your Remotion project!
   Your browser does not support HTML video.
 </video>
 
+https://user-images.githubusercontent.com/AdilSharif5/trello-video-generator/generated-videos/out/video.mp4
+
+https://raw.githubusercontent.com/AdilSharif5/trello-video-generator/generated-videos/out/video.mp4
+
+https://github.com/AdilSharif5/trello-video-generator/blob/generated-videos/out/video.mp4
+
 ## Commands
 
 **Install Dependencies**
