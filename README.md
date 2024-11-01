@@ -11,6 +11,8 @@
 
 Welcome to your Remotion project!
 
+[![Watch the video]](https://raw.githubusercontent.com/AdilSharif5/trello-video-generator/generated-videos/out/video.mp4)
+
 ## Commands
 
 **Install Dependencies**
