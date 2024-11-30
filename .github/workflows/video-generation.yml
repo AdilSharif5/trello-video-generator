@@ -16,6 +16,12 @@ jobs:
         run: |
           git checkout -b generated-videos || git checkout generated-videos
 
+      - name: Sync with main branch (one-way)
+        run: |
+          # Ensure the branch is up-to-date with main
+          git fetch origin main
+          git reset --hard origin/main
+
       # - name: Pull latest changes
       #   run: |
       #     git pull origin generated-videos --rebase
